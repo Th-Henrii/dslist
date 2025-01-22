@@ -1,36 +1,47 @@
 package com.devsuperior.dslist.entities;
 
-import jakarta.persistence.*;
-
 import java.util.Objects;
 
-@Entity//notação que declara que a classe e uma entidade
-@Table(name = "tb_game")//notação que declara um nome de tabela para o banco de dados
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_game")
 public class Game {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //anotação para autoincrement e com identifica para o banco gerar os ID's
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @Column(name = "game_year")//notação para customizar o nome de uma coluna no banco de dados
+
+    @Column(name = "game_year")
     private Integer year;
     private String genre;
-    private String platform;
+    private String platforms;
+    private Double score;
     private String imgUrl;
-    @Column(columnDefinition = "TEXT")//alterando o tipo da coluna de varchar para texto usando a notação e o metodo columDefinition.
+
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+
     @Column(columnDefinition = "TEXT")
     private String longDescription;
 
-    public Game(){
-
+    public Game() {
     }
-    public Game(Long id, String title, Integer year, String genre, String platform, String imgUrl, String shortDescription, String longDescription) {
+
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
+                String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.platform = platform;
+        this.platforms = platforms;
+        this.score = score;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
@@ -68,12 +79,20 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlatform() {
-        return platform;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlatform(String platform) {
-        this.platform = platform;
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     public String getImgUrl() {
@@ -101,14 +120,19 @@ public class Game {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Game game)) return false;
-        return Objects.equals(id, game.id);
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Game other = (Game) obj;
+        return Objects.equals(id, other.id);
     }
 }
