@@ -30,7 +30,7 @@ O **List Game** permite visualizar e organizar uma lista de jogos, categorizados
 git clone https://github.com/Th-Henrii/dslist-thhenrii.git
 
 # Entrar na pasta do projeto back-end
-cd backend
+cd dslist
 
 # Executar o projeto
 ./mvnw spring-boot:run
