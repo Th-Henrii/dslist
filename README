@@ -1,39 +1,41 @@
-# List Game 
+# List Game
 
-# Sobre o projeto
+## Sobre o projeto
 
-List Game é uma aplicação construída durante a **Semana DevSuperior**, evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
+List Game é uma aplicação construída durante a Semana DevSuperior, evento organizado pela DevSuperior.
 
-A aplicação consiste em retornar uma lista de games, onde foram divididos entre as plataformas Aventuras e RPG e Jogos de plataforma, onde também temos a possibilidade de realocar jogos na lista trocando as posições.
+A aplicação consiste em retornar uma lista de games, categorizados em Aventuras e RPG e Jogos de Plataforma. Além disso, é possível realocar jogos na lista trocando suas posições.
 
+## 📌 Modelo conceitual
 
-## Modelo conceitual
-!.[Modelo Conceitual].(https://raw.githubusercontent.com/devsuperior/java-spring-dslist/main/resources/dslist-model.png)
+![Modelo Conceitual](https://raw.githubusercontent.com/devsuperior/java-spring-dslist/main/resources/dslist-model.png)
 
-# Tecnologias utilizadas
-## Back end
-- Java
-- Spring Boot
-- JPA
-- H2 Database / PostgreSQL
+## 🚀 Tecnologias utilizadas
 
-# Como executar o projeto
+### 🖥 Back end
 
-## Back end
+* Java
+* Spring Boot
+* JPA / Hibernate
+* H2 Database / PostgreSQL
+
+## 💻 Como executar o projeto
+
+###🔧 Back end
+
 Pré-requisitos: Java 17
-
-```bash
-# clonar repositório
+```
+# Clonar repositório
 git clone https://github.com/Th-Henrii/dslist-thhenrii.git
 
-# entrar na pasta do projeto back end
+# Entrar na pasta do projeto back end
 cd backend
 
-# executar o projeto
-mvnw spring-boot:run
+# Executar o projeto
+./mvnw spring-boot:run
+```
+## 👨‍💻 Autor
 
-# Autor
+### Thiago Henrique Dos Santos
 
-Thiago Henrique Dos Santos
-
-https://www.linkedin.com/in/thiago-henrique-01120630b/
+[Linkedin](https://www.linkedin.com/in/thiago-henrique-01120630b/)  
